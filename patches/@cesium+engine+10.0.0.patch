@@ -1,0 +1,13 @@
+diff --git a/node_modules/@cesium/engine/Source/Core/isCrossOriginUrl.js b/node_modules/@cesium/engine/Source/Core/isCrossOriginUrl.js
+index 4557038..946584a 100644
+--- a/node_modules/@cesium/engine/Source/Core/isCrossOriginUrl.js
++++ b/node_modules/@cesium/engine/Source/Core/isCrossOriginUrl.js
+@@ -9,7 +9,7 @@ let a;
+  */
+ function isCrossOriginUrl(url) {
+   if (!defined(a)) {
+-    a = document.createElement("a");
++    a = (window.rawDocument || document).createElement("a");
+   }
+ 
+   // copy window location into the anchor to get consistent results

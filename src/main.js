@@ -10,6 +10,7 @@ import "./style.css";
 
 // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
 const viewer = new Viewer("cesiumContainer", {
+  infoBox: false,
   terrain: Terrain.fromWorldTerrain(),
 });
 
@@ -26,3 +27,14 @@ viewer.camera.flyTo({
 createOsmBuildingsAsync().then((buildingTileset) => {
   viewer.scene.primitives.add(buildingTileset);
 });
+
+function isCrossOriginUrl(url2) {
+  const a = document.createElement("a");
+  a.href = window.location.href;
+  const host = a.host;
+  const protocol = a.protocol;
+  a.href = url2;
+  return protocol !== a.protocol || host !== a.host;
+}
+
+console.log('isCrossOriginUrl("skdjfklsdf")', isCrossOriginUrl(""));

@@ -20,6 +20,7 @@
   },
   "type": "module",
   "scripts": {
+    "postinstall": "patch-package",
     "prepare": "husky install",
     "dev": "vite",
     "build": "vite build",
@@ -39,7 +40,8 @@
     "vite-plugin-static-copy": "^1.0.0"
   },
   "dependencies": {
-    "cesium": "^1.114.0"
+    "cesium": "^1.114.0",
+    "patch-package": "^8.0.0"
   },
   "lint-staged": {
     "*.{js,html}": [
